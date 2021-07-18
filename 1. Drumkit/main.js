@@ -9,14 +9,13 @@ function playSound(e){
         alert(`No assigned sound on letter ${e.key}.`);
     } else{
         audio.play();
-        audio.currentTime = 0 // Rewind to start
+        audio.currentTime = 0; // Rewind to start
         key.classList.add('playing'); // Add Class of playing
     }
 }
 
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-
 
 // Function removeTransition init
 function removeTransition(e){
