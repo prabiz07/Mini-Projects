@@ -5,23 +5,23 @@ const form = document.getElementById('form'),
       password = document.getElementById('password'),
       password2 = document.getElementById('password2');
 
-// Event Listener on submit
+// Event listener for form submit
 form.addEventListener('submit', function(e){
     checkRequire([username, email, password, password2]);
-    checkLength(username, 3, 20);
-    checkLength(password, 6, 18);
+    checkLength(username, 3, 25);
     checkEmail(email);
+    checkLength(password, 6, 20);
     checkPasswordsMatch(password, password2);
 
     // Prevent Default
     e.preventDefault();
 });
 
-// Function checkRequire init
+// Function CheckRequire init
 function checkRequire(inputArr){
     inputArr.forEach(input => {
-        if(input.value === ''){
-            showError(input, `${getRequiredField(input)} is required`);
+        if(input.value.trim() === ''){
+            showError(input, `${getRequiredField(input)} is required.`);
         } else{
             showSuccess(input);
         }
@@ -31,7 +31,7 @@ function checkRequire(inputArr){
 // Function checkLength init
 function checkLength(input, min, max){
     if(input.value.length < min){
-        showError(input, `${getRequiredField(input)} must be atleast ${min} character`);
+        showError(input, `${getRequiredField(input)} must be atleast ${min} character.`);
     } else if(input.value.length > max){
         showError(input, `${getRequiredField(input)} must not exceed ${max} character`);
     } else{
@@ -45,17 +45,15 @@ function checkEmail(input){
     if(re.test(input.value.trim())){
         showSuccess(input);
     } else{
-        showError(input, `Please enter valid email`);
+        showError(input, 'Invalid email address');
     }
 }
 
 // Function checkPasswordsMatch init
 function checkPasswordsMatch(input1, input2){
     if(input1.value !== input2.value){
-        showError(input2, 'Password does not match');
-    } else{
-        showSuccess(input2);
-    }
+        showError(input2, 'Passwords does not match');
+    } 
 }
 
 // Function getRequiredField init
@@ -63,18 +61,18 @@ function getRequiredField(input){
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Function showError
+// Function showError init
 function showError(input, message){
     const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
     formControl.className = 'form-control error';
-    small.innerText = message;
+    const info = formControl.querySelector('small');
+    info.innerText = message;
 }
 
-// Function showSuccess
+// Function showSuccess init
 function showSuccess(input, message){
     const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
     formControl.className = 'form-control success';
-    small.innerText = message;
+    const info = formControl.querySelector('small');
+    info.innerText = message;
 }
