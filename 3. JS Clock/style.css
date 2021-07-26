@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+body{
+    background: #6495ed;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dis-flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+    justify-content: center;
+}
+
+.full-height{
+    min-height: 100%;
+}
+
+.clock{
+    border: solid 6px #ffffff;
+    border-radius: 100%;
+    height: 300px;
+    padding: 16px;
+    width: 300px;
+}
+
+.clock__face{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.hand{
+    background: #000000;
+    height: 2px;
+    position: absolute;
+    transform-origin: 100%;
+    top: 50%;
+    width: 50%;
+    -webkit-transform: translateY(-50%) rotate(90deg);
+       -moz-transform: translateY(-50%) rotate(90deg);
+        -ms-transform: translateY(-50%) rotate(90deg);
+         -o-transform: translateY(-50%) rotate(90deg);
+            transform: translateY(-50%) rotate(90deg);
+}
+
+.hand.second__hand{
+    background: #FF0000;
+}
+
+.hand.minute__hand{
+    left: 30px;
+    width: 40%;
+}
+
+.hand.hour__hand{
+    left: 75px;
+    width: 25%;
+}
+
+.mark{
+    background: #ffffff;
+    border-radius: 100%;
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+}
+
+.mark.twelve{
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.mark.three{
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(90deg);
+       -moz-transform: translateY(-50%) rotate(90deg);
+        -ms-transform: translateY(-50%) rotate(90deg);
+         -o-transform: translateY(-50%) rotate(90deg);
+            transform: translateY(-50%) rotate(90deg);
+}
+
+.mark.six{
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.mark.nine{
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(90deg);
+       -moz-transform: translateY(-50%) rotate(90deg);
+        -ms-transform: translateY(-50%) rotate(90deg);
+         -o-transform: translateY(-50%) rotate(90deg);
+            transform: translateY(-50%) rotate(90deg);
+}
