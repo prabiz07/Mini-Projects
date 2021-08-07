@@ -1,0 +1,19 @@
+.site-header{
+    background: skyblue;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.main-body{
+    padding-top: 20px;
+}
+
+.main-body img{
+    margin-bottom: 20px;
+}
+
+.main-body button{
+    width: 100%;
+}
