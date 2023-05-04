@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    align-items: center;
+    background: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.time{
+    display: flex;
+    font-size: 24px;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.time .sec{
+    margin-right: 5px;
+}
+
+.quote{
+   max-width: 60%;
+   margin-top: 20px;
+}
