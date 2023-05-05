@@ -16,6 +16,11 @@ body{
     width: 100%;
 }
 
+.greeting{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .time{
     display: flex;
     font-size: 24px;
@@ -23,7 +28,7 @@ body{
     margin-top: 20px;
 }
 
-.time .sec{
+.time .min{
     margin-right: 5px;
 }
 
