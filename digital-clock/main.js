@@ -1,8 +1,12 @@
 const date = new Date();
 const quoteSelector = document.querySelector('.quote');
+const tempSelector = document.querySelector('.temp');
 
 // Instantiate Quote Class from quote.js file
 const quote = new Quote();
+
+// Instantiate Weather class from weather.js file
+const temp = new Weather();
 
 // Function Get time
 function getTime(){
@@ -27,6 +31,21 @@ function greeting(){
     greetingSelector.innerHTML = welcomeText;
 }
 greeting();
+
+// Temparature Generator
+temp.getWeather()
+.then(data => {
+    // Show Temperature
+    tempSelector.innerHTML = `
+        <div class="icon-set">
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].main}">
+            <p>${data.weather[0].description}</p>
+        </div>    
+        <p>${Math.floor(data.main.temp)}&degC</p>
+        <p>${data.name}, ${data.sys.country}</p>
+    `;
+});
+console.log(temp.getWeather());
 
 // Output Quote
 quote.getQuote()
