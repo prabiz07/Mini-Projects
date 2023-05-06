@@ -36,3 +36,8 @@ body{
    max-width: 60%;
    margin-top: 20px;
 }
+
+.quote p ~ p{
+    margin-top: 15px;
+    text-align: center;
+}
