@@ -33,12 +33,11 @@ quote.getQuote()
 .then(data => {
     // Show Quote
     quoteSelector.innerHTML = `
-        <p>${data.text}</p>
-        <p>- ${data.author}</p>
+        <p>${data.content}</p>
+        <p>- ${data.originator.name}</p>
     `;
 })
 
-console.log(quote.getQuote());
 
     
 
