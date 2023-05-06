@@ -18,3 +18,5 @@ class Quote{
         return responseData;
     }
 }
+
+// API Source and Credit: QuotePark.com and Rapid API

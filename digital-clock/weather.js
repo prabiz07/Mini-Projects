@@ -21,3 +21,5 @@ class Weather{
         return geoResponseDate;
     }
 }
+
+// API Source and Credit: Open Weather Map
