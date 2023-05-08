@@ -1,4 +1,4 @@
-const date = new Date();
+// Quote and Temp Selector
 const quoteSelector = document.querySelector('.quote');
 const tempSelector = document.querySelector('.temp');
 
@@ -10,15 +10,18 @@ const temp = new Weather();
 
 // Function Get time
 function getTime(){
+    const time = new Date();
     const timeSelector = document.querySelector('.time');
     return(
-        timeSelector.innerHTML = date.toLocaleTimeString('en-us', {hour:'2-digit', minute: '2-digit'})
+        timeSelector.innerHTML = time.toLocaleTimeString('en-us', {hour:'2-digit', minute: '2-digit'})
     );
 }
-getTime();
+setInterval(getTime, 1000);
+
 
 // Function Greeting
 function greeting(){
+    const date = new Date();
     const greetingSelector = document.querySelector('.greeting');
     const welcomeTypes = ['Good Morning', 'Good Afternoon', 'Good Evening'];
     let welcomeText = '';
@@ -45,7 +48,6 @@ temp.getWeather()
         <p>${data.name}, ${data.sys.country}</p>
     `;
 });
-console.log(temp.getWeather());
 
 // Output Quote
 quote.getQuote()
